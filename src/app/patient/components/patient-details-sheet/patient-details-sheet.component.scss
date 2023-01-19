@@ -1,0 +1,24 @@
+.sheet__section {
+    display: flex;
+    flex-direction: column;
+
+    .sheet__section {
+        display: flex;
+        align-items: flex-end
+    }
+
+    ::ng-deep button.mat-button {
+        padding: 0;
+        min-width: auto;
+    }
+}
+
+::ng-deep mat-bottom-sheet-container.mat-bottom-sheet-container {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+::ng-deep mat-chip.mat-chip.mat-standard-chip.sheet__chip{
+    background-color: #4367E2;
+    color: white;
+}

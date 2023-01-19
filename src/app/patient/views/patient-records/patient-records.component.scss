@@ -1,0 +1,36 @@
+.records__item {
+    margin: 0 0.5rem;
+    color: #686868;
+}
+
+.records__card {
+    box-shadow: 0.5px 0.5px #888;
+
+    &, .records__card__header {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    &, .records__card__body {
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+}
+
+.records__card__header {
+    padding: 0.5rem;
+    background-color: darkgray;
+}
+
+.records__card__body {
+    padding: 0.5rem;
+}
+
+::ng-deep mat-chip.mat-chip.mat-standard-chip.records__chip{
+    background-color: #F76500;
+    color: white;
+}
+
+.title {
+    padding-left: 7px;
+}

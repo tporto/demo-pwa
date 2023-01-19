@@ -1,0 +1,216 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+$murphy-typography: mat.define-typography-config(
+  $font-family: "'Inter', sans-serif",
+  $headline:  mat.define-typography-level(32px, 32px, 700),
+  $title: mat.define-typography-level(24px, 24px, 700),
+  $subheading-2: mat.define-typography-level(20px, 20px, 700),
+  $body-1: mat.define-typography-level(14px, 14px, 500),
+  $body-2: mat.define-typography-level(14px, 14px, 700),
+  $caption: mat.define-typography-level(12px, 12px, 300),
+);
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core($murphy-typography);
+
+$murphy-primary: (
+  100: #D9E1F9,
+  300: #A7B8F2,
+  400: #7590EA,
+  500: #4367E2,
+  700: #314CA6,
+  800: #1F306A,
+  900: #0D152D,
+  contrast: (
+    100: #282828,
+    300: #282828,
+    400: #282828,
+    500: #FFFFFF,
+    600: #FFFFFF,
+    700: #FFFFFF,
+    800: #FFFFFF,
+    900: #FFFFFF,
+  )
+);
+
+$murphy-secondary: (
+  100: #FDE0CC,
+  300: #FBB788,
+  400: #F98E44,
+  500: #F76500,
+  700: #B54A00,
+  800: #732F00,
+  900: #311400,
+  contrast: (
+    100: #282828,
+    300: #282828,
+    400: #282828,
+    500: #FFFFFF,
+    600: #FFFFFF,
+    700: #FFFFFF,
+    800: #FFFFFF,
+    900: #FFFFFF,
+  )
+);
+
+$murphy-error: (
+  100: #FDE0CC,
+  500: #F9DFDE,
+  700: darken(#F9DFDE, 30%),
+  contrast: (
+    100: #282828,
+    500: #FFFFFF,
+    600: #FFFFFF,
+    700: #FFFFFF,
+  )
+);
+
+$murphy-success: (
+  100: #D6F7E9,
+  500: #31D892,
+  700: darken(#31D892, 30%),
+  contrast: (
+    100: #282828,
+    500: #FFFFFF,
+    600: #FFFFFF,
+    700: #FFFFFF,
+  )
+);
+
+$murphy-alert: (
+  100: #FDE0CC,
+  500: #F98E44,
+  700: darken(#F98E44, 30%),
+  contrast: (
+    100: #282828,
+    500: #FFFFFF,
+    600: #FFFFFF,
+    700: #FFFFFF,
+  )
+);
+
+$murphy-information: (
+  100: #CBEFEF,
+  500: #18C7C1,
+  700: darken(#18C7C1, 30%),
+  contrast: (
+    100: #282828,
+    500: #FFFFFF,
+    600: #FFFFFF,
+    700: #FFFFFF,
+  )
+);
+
+$murphy-black: (
+  50: #FFFFFF,
+  100: #FFFFFF,
+  200: #f2f2f2,
+  300: #e6e6e6,
+  400: darken(#e6e6e6, 10%),
+  500: #CDCDCD,
+  600: #A9A9A9,
+  700: #686868,
+  800: #282828,
+  900: #0f0f0f,
+  contrast: (
+    50: #0f0f0f,
+    100: #0f0f0f,
+    200: #0f0f0f,
+    300: #0f0f0f,
+    400: #0f0f0f,
+    500: #0f0f0f,
+    600: #0f0f0f,
+    700: #0f0f0f,
+    800: #FFFFFF,
+    900: #FFFFFF,
+  )
+);
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$murphy-app-primary: mat.define-palette($murphy-primary, 500, 100, 900);
+$murphy-app-secondary: mat.define-palette($murphy-secondary, 500, 100, 900);
+$murphy-app-error: mat.define-palette($murphy-error, 500, 100, 700);
+
+$murphy-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$murphy-app-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$murphy-app-theme: mat.define-light-theme((
+  color: (
+    primary: $murphy-app-primary,
+    secondary: $murphy-app-secondary,
+    error: $murphy-error,
+    success: $murphy-success,
+    alert: $murphy-alert,
+    information: $murphy-information,
+    accent: $murphy-app-accent,
+    warn: $murphy-app-warn,
+    black: $murphy-black,
+  ),
+  typography: $murphy-typography,
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($murphy-app-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Inter', sans-serif; }
+
+
+/** Button Spinner **/
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  border-top-color: #000000;
+  animation: spinner .8s linear infinite;
+}
+
+.font-small {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.font-medium {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.font-large {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.font-x-large {
+  font-size: 24px;
+  font-weight: 700;
+}

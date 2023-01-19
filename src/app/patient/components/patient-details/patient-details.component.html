@@ -1,0 +1,32 @@
+<section class="patient__section" *ngIf="(patient | async) as patient" >
+    <header class="patient__header">
+        <h2 class="patient__title font-large">{{ patient.name | titlecase }}</h2>
+        <ng-content></ng-content>
+    </header>
+    <section *ngIf="!hideBody" class="patient__body font-small">
+        <span>{{ patient.birthday |date: 'dd/MM/yyyy' }}</span>
+        <div class="patient__item">
+            <mat-icon aria-hidden="false" aria-label="Phone icon" class="patient__icon">phone</mat-icon>
+            <span>{{ patient.phone }}</span>
+        </div>
+        <div class="patient__item">
+            <mat-icon aria-hidden="false" aria-label="Email icon" class="patient__icon">email</mat-icon>
+            <span>{{ patient.email }}</span>
+        </div>
+        <div class="patient__item">
+            <mat-icon aria-hidden="false" aria-label="People icon" class="patient__icon">people</mat-icon>
+            <span>{{ patient.motherName }}</span>
+        </div>
+        <div class="patient__item">
+            <mat-icon aria-hidden="false" aria-label="People icon" class="patient__icon">people</mat-icon>
+            <span>{{ patient.fatherName }}</span>
+        </div>
+        <div class="patient__item">
+            <mat-icon aria-hidden="false" aria-label="Credit card icon" class="patient__icon">credit_card</mat-icon>
+            <div class="patient__subitem">
+                <span>{{ patient.healthInsurance?.name }}</span>
+                <span>{{ patient.healthInsurance?.companyName + " " + patient.healthInsurance?.number}}</span>
+            </div>
+        </div>
+    </section>
+</section>

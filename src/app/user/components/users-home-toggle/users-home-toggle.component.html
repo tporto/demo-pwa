@@ -1,0 +1,21 @@
+<mat-button-toggle-group
+  name="toggle"
+  class="toggle"
+  aria-label="Seleciona visualização agenda ou pacientes"
+  [(ngModel)]="selectedValue"
+  (click)="onSelectToogle()"
+>
+  <mat-button-toggle value="1" class="toggle__button" disableRipple="true">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <mat-icon class="calendar-icon"> calendar_today </mat-icon>
+      Agenda
+    </div>
+  </mat-button-toggle>
+
+  <mat-button-toggle value="2" class="toggle__button" disableRipple="true">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      Pacientes
+      <mat-icon class="group-icon">group</mat-icon>
+    </div>
+  </mat-button-toggle>
+</mat-button-toggle-group>

@@ -1,0 +1,25 @@
+<div class="header" fxLayout="row">
+  <figure class="header__avatar" fxLayoutAlign="space-between center">
+    <img
+      src="../../../../assets/images/no-image-icon-md.png"
+      alt="Imagem de avatar do usuário autenticado no sistema."
+    />
+  </figure>
+
+  <div fxLayout="column" fxLayoutAlign="center" class="header__text__wrapper">
+    <h3 color="primary">Olá, {{ currentUser?.nome }}</h3>
+    <span>
+      {{ getToday() | date: "EEEE," }}
+      <strong>{{ getToday() | date: "dd 'de' LLLL" }} </strong>
+    </span>
+  </div>
+
+  <button
+    mat-flat-button
+    class="header__logout-button"
+    (click)="logOut()"
+    fxLayout="row"
+  >
+    <mat-icon color="error">logout</mat-icon> <span>Sair</span>
+  </button>
+</div>

@@ -1,0 +1,38 @@
+<section class="list__section">
+    <header class="list__header">
+        <mat-label class="font-medium">Buscar Pacientes</mat-label>
+        <mat-form-field appearance="outline" class="list__input">
+            <input matInput [(ngModel)]="searchName">
+            <mat-icon matSuffix (click)="search()">search</mat-icon>
+        </mat-form-field>
+    </header>
+    <section class="list__body">
+    <mat-list role="list" *ngIf="wasSearched && (_patientList | async) as patients">
+        <mat-list-item role="listitem" *ngFor="let patient of patients">
+                <div class="list__item">
+                    <div class="list__left">
+                        <span class="list__item__title font-medium">{{ patient.name | titlecase }}</span>
+                        <div class="align-bottom font-small">
+                            <mat-icon aria-hidden="false" aria-label="Cake icon" class="orange">cake</mat-icon>
+                            <span>{{ patient.birthday | date: 'dd/MM/yyyy' }}</span>
+                            <mat-icon aria-hidden="false" aria-label="Gender icon">{{ getGenderIcon(patient.gender) }}</mat-icon>
+                            <span>{{ getGenderName(patient.gender) }}</span>
+                        </div>
+                    </div>
+                    <div class="list__right">
+                        <button mat-button (click)="handleActionClick(patient)">
+                            <mat-icon aria-hidden="false" aria-label="Action icon">more_vert</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+            <div class="center font-medium" *ngIf="patients.length == 0">
+                Paciente não encontrado
+            </div>
+        </mat-list>
+        <div class="center font-medium" *ngIf="!wasSearched">
+            Digite o nome de um paciente
+        </div>
+    </section>
+</section>

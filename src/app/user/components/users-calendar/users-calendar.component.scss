@@ -1,0 +1,38 @@
+.card {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+  &__calendar {
+    ::ng-deep .mat-calendar-table-header-divider {
+      display: none;
+    }
+
+    ::ng-deep .mat-calendar-body-label[colspan="7"] {
+      display: none;
+    }
+
+    ::ng-deep .mat-calendar-body-label {
+      opacity: 0;
+    }
+  }
+
+  ::ng-deep
+    .mat-calendar-body-today:not(.mat-calendar-body-comparison-identical) {
+    border: none;
+  }
+
+  ::ng-deep
+    .mat-calendar-body-today:not(.mat-calendar-body-comparison-identical)::after {
+    content: "\25CF";
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    width: 10px;
+    margin-left: -5px;
+    color: #f76500;
+  }
+
+  ::ng-deep .mat-calendar-body-selected {
+    background-color: #d9e1f9;
+    color: #686868;
+  }
+}

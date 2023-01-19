@@ -1,0 +1,33 @@
+.toggle {
+  border: 1px solid #4367e2;
+  border-radius: 100px;
+
+  .calendar-icon {
+    margin-right: 10px;
+  }
+
+  &__button {
+    color: #314ca6;
+
+    &:hover {
+      border-radius: 30px;
+    }
+  }
+
+  .group-icon {
+    margin-left: 10px;
+  }
+
+  .mat-button-toggle {
+    border-left: none;
+  }
+
+  .mat-button-toggle-checked {
+    background-color: #f1f5ff;
+    border-radius: 30px;
+  }
+
+  ::ng-deep .mat-button-toggle-label-content {
+    padding: 0 30px;
+  }
+}

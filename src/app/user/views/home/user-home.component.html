@@ -1,0 +1,17 @@
+<div class="home">
+  <div class="home__header">
+    <app-user-header></app-user-header>
+  </div>
+
+  <div class="home__unit">
+    <app-users-select-unit></app-users-select-unit>
+  </div>
+
+  <div class="home__toggle">
+    <app-users-home-toggle></app-users-home-toggle>
+  </div>
+
+  <app-users-calendar *ngIf="selectedToogle === '1'" (onDatePicked)="fetchSchedules($event)"></app-users-calendar>
+  <app-schedule-list *ngIf="selectedToogle === '1'" [list]="schedules"></app-schedule-list>
+  <app-patient-list *ngIf="selectedToogle === '2'"></app-patient-list>
+</div>

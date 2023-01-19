@@ -1,0 +1,10 @@
+::ng-deep.mat-dialog-container {
+  border-radius: 20px;
+  padding: 44px 44px;
+}
+
+.dialog {
+  &__title {
+    font-weight: 600;
+  }
+}

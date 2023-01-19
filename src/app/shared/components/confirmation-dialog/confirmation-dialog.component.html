@@ -1,0 +1,19 @@
+<div class="dialog">
+  <h1 class="mat-title dialog__title">
+    {{ title }}
+  </h1>
+
+  <div mat-dialog-content *ngIf="message">
+    <p>{{ message }}</p>
+  </div>
+
+  <div mat-dialog-actions fxLayoutAlign="center">
+    <button mat-stroked-button color="warn" (click)="onDismiss()">
+      {{ getCancelActionText() }}
+    </button>
+
+    <button mat-flat-button color="warn" (click)="onConfirm()">
+      {{ getConfirmActionText() }}
+    </button>
+  </div>
+</div>

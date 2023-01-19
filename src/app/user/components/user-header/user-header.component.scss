@@ -1,0 +1,36 @@
+.header {
+  &__avatar {
+    margin: 0;
+    img {
+      width: 55px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &__logout-button {
+    margin-left: auto;
+  }
+
+  &__text__wrapper {
+    margin-left: 10px;
+
+    h3 {
+      color: #4367e2;
+      font-weight: 700;
+      font-size: 20px;
+      margin: 0;
+    }
+
+    span {
+      font-weight: 400;
+      font-size: 14px;
+      color: #686868;
+    }
+
+    span:first-letter {
+      text-transform: uppercase;
+    }
+  }
+}

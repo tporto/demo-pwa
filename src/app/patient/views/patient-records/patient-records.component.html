@@ -1,0 +1,35 @@
+<app-patient-wrapper>
+    <div header>
+        <mat-icon aria-hidden="false" aria-label="Keyboard arrow left icon" class="wrapper__icon" (click)="goBack()">keyboard_arrow_left</mat-icon>
+        <h2 class="font-x-large title">Prontuário</h2>
+    </div>
+    <div>
+        <app-patient-details [hideBody]="true">
+            <mat-chip-list aria-label="Fish selection">
+              <button mat-button (click)="goHome()">
+                <mat-chip class="records__chip">Tela inicial</mat-chip>
+              </button>
+            </mat-chip-list>
+        </app-patient-details>
+        <section *ngIf="record?.hasDiagnosis()" class="records__item">
+            <h4 class="font-medium">Diagnóstico</h4>
+            <p class="font-small" *ngFor="let diagnosis of record?.diagnoses">{{ diagnosis.title }}</p>
+        </section>
+        <section *ngIf="record?.hasMedicines()" class="records__item">
+            <h4 class="font-medium">Medicamentos</h4>
+            <p class="font-small" *ngFor="let medicine of record?.medicines">{{ medicine.title }}</p>
+        </section>
+        <section *ngIf="record?.hasProcedures()" class="records__item">
+            <h4 class="font-medium">Procedimentos</h4>
+            <p class="font-small" *ngFor="let procedure of record?.procedures">{{ procedure.title }}</p>
+        </section>
+        <section class="records__item records__card">
+          <header class="records__card__header">
+            Evolução
+          </header>
+          <div class="records__card__body">
+            <p [innerHtml]="record?.historicoDoencaAtual"></p>
+          </div>
+        </section>
+    </div>
+</app-patient-wrapper>

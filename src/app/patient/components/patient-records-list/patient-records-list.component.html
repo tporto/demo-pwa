@@ -1,0 +1,15 @@
+<section class="records__section">
+    <h2 class="font-x-large title">Atendimentos</h2>
+    <div class="records__list">
+        <ng-container *ngIf="(_recordsList | async) as records">
+            <app-patient-record-item
+                *ngFor="let record of records; let last = last"
+                [record]="record"
+                [showLine]="!last"
+            ></app-patient-record-item>
+            <div class="title font-medium" *ngIf="records.length == 0">
+                Paciente não possui atendimentos
+            </div>
+        </ng-container>
+    </div>
+</section>

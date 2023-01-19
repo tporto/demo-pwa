@@ -1,0 +1,27 @@
+<section class="list__section">
+  <section class="list__body">
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let schedule of list">
+       <div class="font-medium list__time">{{ getShortTime(schedule.hora) }}</div>
+        <div class="list__item">
+          <div class="list__left">
+            <span class="list__item__title font-medium">{{ schedule.Paciente.nome.substring(0, 35) }}</span>
+            <span class="list__item__title font-small">
+              <mat-icon aria-hidden="false" aria-label="Cake icon" class="orange">badge</mat-icon> {{
+              schedule.Convenio.descricaoConvenio }}
+            </span>
+          </div>
+          <div class="list__right">
+            <button mat-button (click)="onShowModalPatient(schedule)">
+              <mat-icon aria-hidden="false" aria-label="Action icon">more_vert</mat-icon>
+            </button>
+          </div>
+        </div>
+       <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+    <div class="center font-medium" *ngIf="list.length === 0">
+      Nenhum agendamento encontrado
+    </div>
+  </section>
+</section>

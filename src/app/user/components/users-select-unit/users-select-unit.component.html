@@ -1,0 +1,15 @@
+<section class="select" fxLayout="column" fxLayoutAlign="center">
+  <span class="select__title" color="neutral" fxLayoutAlign="center center">
+    Selecione uma unidade
+  </span>
+
+  <mat-form-field class="select__input">
+    <mat-icon matPrefix class="select__input__icon">place</mat-icon>
+
+    <mat-select [value]="getSelectedUnit()" (selectionChange)="onSelectedUnit($event.value)">
+      <mat-option *ngFor="let unit of units" [value]="unit.codEmpresa">
+        {{ unit.nomeFantasia }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</section>

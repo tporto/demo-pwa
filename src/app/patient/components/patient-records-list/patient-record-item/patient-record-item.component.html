@@ -1,0 +1,14 @@
+<div class="item__section">
+    <div class="item__left">
+        <div class="item__line" *ngIf="showLine"></div>
+        <div class="item__circle"></div>
+    </div>
+    <div class="item__content">
+        <p class="font-small">{{ record.date | date: 'dd/MM/yyyy HH:mm' }}</p>
+        <p class="font-small">{{ record.getRecordSpecialty() }} | Dr {{ record.professional.name }}</p>
+        <a class="item__icon__text font-medium" [routerLink]="[getRouterLink()]">
+            <mat-icon aria-hidden="false" aria-label="Insert drive file icon" class="item__icon">insert_drive_file</mat-icon>
+            <span>Visualizar</span>
+        </a>
+    </div>
+</div>

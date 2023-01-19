@@ -1,0 +1,63 @@
+<section class="auth">
+  <div class="auth__image"></div>
+
+  <div fxLayoutAlign="center">
+    <img
+      src="assets/images/logo-linx-black.png"
+      class="auth__logo"
+      alt="Logotipo do ClinicWeb"
+    />
+  </div>
+
+  <div class="auth__form">
+    <app-alert [text]="errorMessage" *ngIf="errorMessage"></app-alert>
+    <form
+      [formGroup]="authForm"
+      (ngSubmit)="submitForm()"
+      fxLayout="column"
+      fxLayoutAlign="space-between"
+    >
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Usuário</mat-label>
+        <input
+          matInput
+          formControlName="username"
+          placeholder="Usuário"
+          type="text"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Senha</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          placeholder="Sua senha secreta shhhh"
+          [type]="showPassword ? 'text' : 'password'"
+        />
+        <button
+          type="button"
+          (keydown.enter)="$event.preventDefault()"
+          mat-icon-button
+          matSuffix
+          (click)="toggleShowPassword()"
+        >
+          <mat-icon>{{
+            showPassword ? "visibility" : "visibility_off"
+          }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div fxLayoutAlign="end">
+        <button
+          [class.spinner]="isSubmitting"
+          [disabled]="isSubmitting"
+          mat-flat-button
+          color="primary"
+          class="auth__form__button"
+        >
+          Entrar
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

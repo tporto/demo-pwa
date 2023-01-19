@@ -1,0 +1,42 @@
+.auth {
+  &__image {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    opacity: 50%;
+    background-image: url("/assets/images/auth_image.png");
+    background-size: cover;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      right: 0;
+      border-radius: 20px;
+      background: white;
+      height: 60px;
+    }
+  }
+
+  &__logo {
+    max-width: 420px;
+    position: absolute;
+    margin-top: -160px;
+  }
+
+  &__form {
+    padding: 0 32px;
+    padding-bottom: 100px;
+    padding-top: 3rem;
+
+    &__button {
+      border-radius: 100px;
+      width: 90px;
+      height: 40px;
+      background-color: #31D892;
+      font-weight: 500;
+      font-size: 14px;
+    }
+  }
+}

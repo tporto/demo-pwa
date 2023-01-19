@@ -1,0 +1,12 @@
+<div class="sheet__section">
+    <header class="sheet__section">
+        <button mat-button (click)="cancelSheet()">
+            <mat-icon aria-hidden="false" aria-label="Close icon">close</mat-icon>
+        </button>
+    </header>
+    <app-patient-details>
+        <mat-chip-list aria-label="Fish selection">
+            <mat-chip (click)="clickChip()" class="sheet__chip">Histórico</mat-chip>
+        </mat-chip-list>
+    </app-patient-details>
+</div>

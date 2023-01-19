@@ -1,0 +1,17 @@
+.home {
+  padding: 32px;
+
+  &__header {
+    margin-bottom: 42px;
+  }
+
+  &__unit,
+  &__toggle {
+    margin-bottom: 20px;
+  }
+
+  &__toggle {
+    display: flex;
+    justify-content: center;
+  }
+}

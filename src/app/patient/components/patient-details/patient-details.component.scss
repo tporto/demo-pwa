@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+.patient__section {
+    padding: 0.25rem;
+    margin: 0.25rem;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.patient__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.patient__title {
+    color: #686868;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.patient__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.patient__item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.patient__subitem {
+    display: flex;
+    flex-direction: column;
+}
+
+.patient__icon {
+    color: #F76500;
+}

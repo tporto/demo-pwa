@@ -1,0 +1,13 @@
+.alert {
+  border: 1px solid #FFC2C2;
+  background: #FFEFEF;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  transition: opacity .15s linear;
+  margin-bottom: 2rem;
+
+  &__text {
+    color: #313131;
+    font-size: 1rem;
+  }
+}
